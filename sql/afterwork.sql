@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mer. 25 oct. 2024 à 13:47
--- Version du serveur : 8.3.0
--- Version de PHP : 8.2.18
+-- Généré le : dim. 27 oct. 2024 à 16:23
+-- Version du serveur : 8.2.0
+-- Version de PHP : 8.2.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -71,7 +71,10 @@ CREATE TABLE IF NOT EXISTS `bar_accounts` (
 --
 
 INSERT INTO `bar_accounts` (`bar_account_id`, `bar_id`, `username`, `password_hash`, `created_at`) VALUES
-(1, 1, 'zebu59', '$2y$10$B09cvC83WSia.Q6EQK6QTeGdYEgsEc0wyKmNt8pv.FX1xmKe4Z36K', '2024-10-24 13:53:48');
+(1, 1, 'zebu59', '$2y$10$B09cvC83WSia.Q6EQK6QTeGdYEgsEc0wyKmNt8pv.FX1xmKe4Z36K', '2024-10-24 13:53:48'),
+(2, 2, 'beer59', '$2y$10$6vv/YpY2cAz5tFqvkDnF4.tJGFhjaE6PUt/Uc1z06pAmpxR2q4YAq', '2024-10-27 16:17:49'),
+(3, 3, 'peac59', '$2y$10$0HaLWR70iaORI104wRz4EeZswX4QJwYe6P4sE/Sx6wvpuqo8rPZNu', '2024-10-27 16:19:14'),
+(4, 4, 'helt59', '$2y$10$yIKv0EGECup17O8RFGOHNu4eupldKOZBHuyKdPyAcSRTMnAOrk8Uq', '2024-10-27 16:20:42');
 
 -- --------------------------------------------------------
 
@@ -180,14 +183,17 @@ CREATE TABLE IF NOT EXISTS `reservations` (
   PRIMARY KEY (`reservation_id`),
   UNIQUE KEY `reservation_id` (`reservation_id`),
   KEY `idx_reservations_date` (`reservation_date`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `reservations`
 --
 
 INSERT INTO `reservations` (`reservation_id`, `user_id`, `bar_id`, `reservation_date`, `reservation_time`, `number_of_people`, `status`, `created_at`) VALUES
-(5, 2, 2, '2024-10-25', '17:42:00', 3, 'Pending', '2024-10-25 12:43:07');
+(5, 2, 2, '2024-10-25', '17:42:00', 3, 'Pending', '2024-10-25 12:43:07'),
+(7, 4, 1, '2024-10-29', '18:15:00', 3, 'Confirmed', '2024-10-27 16:15:43'),
+(8, 4, 2, '2024-10-30', '20:00:00', 2, 'Pending', '2024-10-27 16:18:17'),
+(9, 4, 3, '2024-10-29', '19:00:00', 3, 'Pending', '2024-10-27 16:20:01');
 
 -- --------------------------------------------------------
 
@@ -205,7 +211,7 @@ CREATE TABLE IF NOT EXISTS `reviews` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`review_id`),
   UNIQUE KEY `review_id` (`review_id`)
-) ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -224,14 +230,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_id` (`user_id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`user_id`, `first_name`, `last_name`, `email`, `password_hash`, `created_at`) VALUES
-(1, 'Gregoire', 'Martinez', 'martson258@gmail.com', '$2y$10$ZeD26JkME4xTnUEUD8r60uE.673fw0n/7fNnZuLALrCNKknlQA7hS', '2024-10-26 16:28:54'),
+(4, 'Gregoire', 'Martinez', 'martson258@gmail.com', '$2y$10$XqtDLMkDPCzCxqzCbwy7NOAhtz6LGW6S6.7ig9x6MM9YNUUYHyAAm', '2024-10-27 16:15:24');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
