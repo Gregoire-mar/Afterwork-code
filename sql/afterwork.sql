@@ -187,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `reservations` (
 --
 
 INSERT INTO `reservations` (`reservation_id`, `user_id`, `bar_id`, `reservation_date`, `reservation_time`, `number_of_people`, `status`, `created_at`) VALUES
-(5, 2, 2, '2024-09-25', '17:42:00', 3, 'Pending', '2024-10-25 12:43:07');
+(5, 2, 2, '2024-10-25', '17:42:00', 3, 'Pending', '2024-10-25 12:43:07');
 
 -- --------------------------------------------------------
 

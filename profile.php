@@ -139,8 +139,8 @@ $result = $stmt->get_result();
         <a href="afterwork.php" id="footer-logo-link">
             <img src="Designer.jpeg" alt="Logo Afterwork" id="footer-logo">
         </a>
-        <p>&copy; 2024 Projet Afterwork pour le Workshop EPSI Lille. Tous droits réservés.</p>
-        <p>Retrouvez le code source de ce projet sur <a href="https://github.com/Louispeka/AfterWork" target="_blank">Github</a>.</p>
+        <p>&copy; 2024 Projet Afterwork. Tous droits réservés.</p>
+        <p> Retrouvez le code source de ce projet sur <a href="https://github.com/Gregoire-mar/afterwork-code" target="_blank">Github</a>.</p>
     </div>
 </footer>
 
